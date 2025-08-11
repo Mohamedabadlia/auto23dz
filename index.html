@@ -218,7 +218,7 @@ footer{margin-top:32px;color:var(--muted);display:flex;justify-content:space-bet
 <section id="contact" style="margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.03);">
   <div style="display:flex;flex-direction:column;gap:8px">
     <h3 style="margin:0">تواصل معنا</h3>
-    <p class="muted" style="margin:0">رقم الهاتف: +213 6X XX XX XX — واتساب متاح</p>
+    <p class="muted" style="margin:0">رقم الهاتف: 0558216065 — واتساب متاح</p>
     <p class="muted" style="margin:0">العنوان: الجزائر العاصمة — معرض auto 23 dz</p>
   </div>
 </section>
@@ -385,7 +385,7 @@ footer{margin-top:32px;color:var(--muted);display:flex;justify-content:space-bet
     // contact button
     function contactSeller(id){
       const car = cars.find(c=>c.id===id);
-      const phone = '+2136XXXXXXX';
+      const phone = '+213558216065';
       const text = encodeURIComponent(`مرحباً، أريد معلومات عن السيارة: ${car.brand} ${car.model} (${car.year}) — السعر ${formatPrice(car.price)} DA.`);
       // open whatsapp (user can edit)
       window.open(`https://wa.me/${phone.replace(/[^0-9]/g,'')}?text=${text}`, '_blank');
