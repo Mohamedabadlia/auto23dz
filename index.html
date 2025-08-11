@@ -1,439 +1,410 @@
 <!doctype html>
+
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>auto 23 dz — معرض السيارات (متفرع وكبير)</title>
-  <meta name="description" content="نسخة متفرع وكبيرة لمعرض auto 23 dz مع لوحة إدارة ومميزات متقدمة." />
+  <title>auto 23 dz — معرض السيارات</title>
+  <meta name="description" content="نسخة عرض لمعرض السيارات auto 23 dz — تصميم نظيف وعصري لعرض السيارات." />
   <style>
-    :root{--bg:#071018;--card:#0b1320;--muted:#9aa6b2;--accent:#c7a17a;--white:#f8fafc}
+    /* --------------------
+       Reset & base
+       -------------------- */
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#98a0ad;
+      --accent:#c7a17a; /* warm metallic accent */
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --white: #f8fafc;
+      --shadow: 0 6px 20px rgba(2,6,23,0.6);
+      font-family: 'Segoe UI', Tahoma, system-ui, -apple-system, 'Helvetica Neue', Arial;
+    }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, 'Segoe UI', Tahoma, system-ui, -apple-system, 'Helvetica Neue', Arial;color:var(--white);background:linear-gradient(180deg,#041018,#071824);}
-    a{color:inherit}
-    .app{max-width:1400px;margin:18px auto;padding:18px}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #061018 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+    }/* ---------- container ---------- */
+.wrap{max-width:1200px;margin:0 auto}
 
-    /* header */
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#0f1724,#152229);display:grid;place-items:center}
-    nav{display:flex;gap:10px}
-    .nav-link{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 12px;border-radius:8px;cursor:pointer}
-    .nav-cta{background:linear-gradient(90deg,var(--accent),#f1caa9);color:#061018;border:none;padding:10px 16px;border-radius:12px;font-weight:700}
+/* ---------- header ---------- */
+header{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;
+}
+.brand{
+  display:flex;align-items:center;gap:14px;
+}
+.logo{
+  width:64px;height:64px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#111827,#1f2937);box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.logo svg{width:44px;height:44px}
+.brand h1{font-size:20px;margin:0}
+.brand p{margin:0;font-size:12px;color:var(--muted)}
 
-    /* layout */
-    .layout{display:grid;grid-template-columns:260px 1fr;gap:16px}
-    .sidebar{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .content{padding:14px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:12px;border:1px solid rgba(255,255,255,0.03);min-height:72vh}
-    .side-item{display:block;padding:10px;border-radius:8px;margin-bottom:8px;background:transparent;border:1px solid rgba(255,255,255,0.02);cursor:pointer}
+nav{display:flex;gap:12px;align-items:center}
+.nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--white);cursor:pointer}
+.nav-cta{background:linear-gradient(90deg,var(--accent),#f1caa9);color:#061018;border:none;padding:10px 16px;border-radius:12px;font-weight:600}
 
-    /* cards & grid */
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.015),rgba(255,255,255,0.01));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 26px rgba(1,6,12,0.6)}
-    .car-img{height:150px;border-radius:10px;background:linear-gradient(90deg,#0b1220,#081120);display:grid;place-items:center;margin-bottom:8px}
-    .meta{display:flex;justify-content:space-between;align-items:center}
-    .specs{font-size:13px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-    .btn{padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),#f7d8be);color:#061018;border:none}
+/* ---------- hero ---------- */
+.hero{
+  background:linear-gradient(90deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:18px;padding:28px;margin-bottom:26px;display:flex;gap:22px;align-items:center;box-shadow:var(--shadow);
+}
+.hero-left{flex:1}
+.kicker{font-size:13px;color:var(--muted);margin-bottom:8px}
+.hero h2{margin:0;font-size:28px}
+.hero p{color:var(--muted);margin-top:8px}
+.hero-actions{margin-top:14px;display:flex;gap:10px}
 
-    /* admin panel */
-    .admin-top{display:flex;gap:12px;align-items:center;margin-bottom:12px}
-    .kpi{display:flex;gap:12px}
-    .kpi .tile{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);min-width:130px;text-align:center}
+.hero-right{width:420px;max-width:40%;display:grid;place-items:center}
+.showroom{
+  width:100%;height:220px;border-radius:14px;background:linear-gradient(180deg,#07101a 0%, #0b1721 100%);border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden
+}
+.showroom .floor{position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.35));transform:skewY(-4deg)}
 
-    /* forms */
-    form{display:flex;flex-direction:column;gap:8px}
-    label{font-size:13px;color:var(--muted)}
-    input,select,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);outline:none}
+/* ---------- filters & tools ---------- */
+.tools{display:flex;gap:12px;align-items:center;margin:18px 0}
+.search{flex:1;display:flex;align-items:center;background:var(--glass);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.search input{flex:1;background:transparent;border:0;color:var(--white);outline:none;padding:6px 8px}
+.select{padding:10px;border-radius:10px;background:var(--glass-2);border:1px solid rgba(255,255,255,0.03)}
 
-    /* table */
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:right}
+/* ---------- grid of cars ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border-radius:14px;padding:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 26px rgba(1,6,12,0.6);display:flex;flex-direction:column;gap:10px;min-height:320px;position:relative;overflow:hidden
+}
+.card .car-visual{height:160px;border-radius:10px;background:linear-gradient(135deg,#0b1220 0%, #08121a 100%);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.02)}
+.car-meta{display:flex;justify-content:space-between;align-items:center}
+.car-meta h3{margin:0;font-size:16px}
+.price{font-weight:700;color:var(--accent)}
+.specs{font-size:13px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.badge{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
 
-    /* small */
-    .muted{color:var(--muted)}
-    .hidden{display:none}
+.card .actions{margin-top:auto;display:flex;gap:10px}
+.btn{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#f7d8be);color:#061018;border:none}
 
-    /* responsiveness */
-    @media (max-width:900px){.layout{grid-template-columns:1fr} .sidebar{order:2}}
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60;padding:24px}
+.modal.open{display:flex}
+.modal-card{width:100%;max-width:900px;border-radius:14px;padding:18px;background:linear-gradient(180deg,#07101a,#041018);border:1px solid rgba(255,255,255,0.04)}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.close{background:transparent;border:0;color:var(--muted);font-size:18px;cursor:pointer}
 
-    /* big footer */
-    footer{margin-top:18px;color:var(--muted);text-align:center}
+/* ---------- footer ---------- */
+footer{margin-top:32px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 
-    /* charts */
-    .chart{width:100%;height:220px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:8px;padding:8px}
+/* ---------- responsiveness ---------- */
+@media (max-width:900px){
+  .hero{flex-direction:column}
+  .hero-right{width:100%;max-width:100%}
+  .modal-grid{grid-template-columns:1fr}
+}
+
+/* small helpers */
+.muted{color:var(--muted)}
+.center{text-align:center}
+.sr-only{position:absolute;left:-9999px}
+
+/* little SVG car styling used in cards */
+.car-svg{width:100%;height:100%;max-height:140px}
 
   </style>
 </head>
 <body>
-  <div class="app" id="app">
+  <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo"><svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="10" fill="#0b1220"/><path d="M8 36c2-8 12-16 24-16s22 8 26 16v10H8V36z" fill="#c7a17a" opacity="0.12"/></svg></div>
+        <div class="logo" aria-hidden>
+          <!-- simple mark inspired by car silhouette -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <rect x="0" y="0" width="64" height="64" rx="12" fill="url(#g)"/>
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#0b1220"/>
+                <stop offset="1" stop-color="#17212a"/>
+              </linearGradient>
+            </defs>
+            <path d="M8 36c2-8 12-16 24-16s22 8 26 16v10H8V36z" fill="#c7a17a" opacity="0.12"/>
+            <path d="M10 42c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm40 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z" fill="#c7a17a" opacity="0.9"/>
+          </svg>
+        </div>
         <div>
-          <h2 style="margin:0">auto 23 dz</h2>
-          <div class="muted">معرض سيارات — نموذج متفرع مع لوحة إدارة</div>
+          <h1>auto 23 dz</h1>
+          <p>معرض السيارات — نسخة عرض احترافية</p>
+        </div>
+      </div><nav>
+    <button class="nav-btn">الرئيسية</button>
+    <button class="nav-btn">الموديلات</button>
+    <button class="nav-btn">العروض</button>
+    <button class="nav-cta" onclick="scrollToContact()">اتصل بنا</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="kicker">مرحباً بك في</div>
+    <h2>auto 23 dz — رفاهية وأداء</h2>
+    <p class="muted">نسخة نموذجية لعرض السيارات لمجّيرك. تصميم نظيف، تباينات معدنية، وواجهة تبرز السيارات بشكل أنيق.</p>
+    <div class="hero-actions">
+      <button class="nav-cta" onclick="highlightPremium()">أبرز الطرازات</button>
+      <button class="nav-btn" onclick="toggleAll()">إعادة التصفية</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="showroom" role="img" aria-label="عرض سيارة">
+      <!-- stylized car SVG center -->
+      <svg class="car-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <defs>
+          <linearGradient id="metal" x1="0" x2="1">
+            <stop offset="0" stop-color="#333"/>
+            <stop offset="1" stop-color="#777"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="400" fill="none" />
+        <g transform="translate(0,40)">
+          <path d="M60 220 C120 160 220 140 310 140 C400 140 530 140 610 200 L640 220 L710 220 L730 200 L760 200 L760 260 L60 260 Z" fill="url(#metal)" opacity="0.95"/>
+          <circle cx="200" cy="260" r="28" fill="#111"/>
+          <circle cx="560" cy="260" r="28" fill="#111"/>
+        </g>
+      </svg>
+      <div class="floor"></div>
+    </div>
+  </div>
+</section>
+
+<section class="tools">
+  <div class="search" role="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:0.7;" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></circle></svg>
+    <input id="q" placeholder="ابحث عن موديل أو سنة أو سعر..." oninput="applyFilters()">
+  </div>
+  <select id="filter-brand" class="select" onchange="applyFilters()">
+    <option value="">كل الماركات</option>
+    <option value="Audi">Audi</option>
+    <option value="BMW">BMW</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Mercedes">Mercedes</option>
+    <option value="KIA">KIA</option>
+  </select>
+  <select id="filter-type" class="select" onchange="applyFilters()">
+    <option value="">كل الأنواع</option>
+    <option value="SUV">SUV</option>
+    <option value="Sedan">Sedan</option>
+    <option value="Coupe">Coupe</option>
+  </select>
+  <select id="filter-price" class="select" onchange="applyFilters()">
+    <option value="">كل الأسعار</option>
+    <option value="0-20000">أقل من 20,000</option>
+    <option value="20000-40000">20,000 - 40,000</option>
+    <option value="40000-100000">أكثر من 40,000</option>
+  </select>
+</section>
+
+<!-- ------- grid of car cards ------- -->
+<section class="grid" id="carsGrid">
+  <!-- Cards will be populated by JS from array for brevity and maintainability -->
+</section>
+
+<!-- contact -->
+<section id="contact" style="margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.03);">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <h3 style="margin:0">تواصل معنا</h3>
+    <p class="muted" style="margin:0">رقم الهاتف: +213 6X XX XX XX — واتساب متاح</p>
+    <p class="muted" style="margin:0">العنوان: الجزائر العاصمة — معرض auto 23 dz</p>
+  </div>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> auto 23 dz</div>
+  <div class="muted">نسخة عرض — صممت للشخصية والعرض على المالك</div>
+</footer>
+
+  </div>  <!-- modal for details -->  <div class="modal" id="modal">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div>
+          <h3 id="modalTitle" style="margin:0">تفاصيل السيارة</h3>
+          <div class="muted" id="modalSubtitle">موديل — سنة</div>
+        </div>
+        <div>
+          <button class="close" onclick="closeModal()">إغلاق ✕</button>
         </div>
       </div>
-      <nav>
-        <button class="nav-link" data-route="#home">الرئيسية</button>
-        <button class="nav-link" data-route="#inventory">المعرض</button>
-        <button class="nav-link" data-route="#analytics">احصائيات</button>
-        <button class="nav-link" data-route="#admin">لوحة التحكم</button>
-        <button class="nav-cta" id="loginBtn">دخول المدير</button>
-      </nav>
-    </header>
-
-    <div class="layout">
-      <aside class="sidebar">
-        <div style="margin-bottom:12px"><strong>القسم السريع</strong></div>
-        <div class="side-item" data-route="#home">الرئيسية</div>
-        <div class="side-item" data-route="#inventory">المعرض</div>
-        <div class="side-item" data-route="#offers">العروض</div>
-        <div class="side-item" data-route="#about">عن المعرض</div>
-        <div class="side-item" data-route="#contact">تواصل</div>
-
-        <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:12px 0">
-        <div style="margin-bottom:8px"><strong>لوحة الإدارة</strong></div>
-        <div class="side-item" data-admin="#admin/dashboard">لوحة</div>
-        <div class="side-item" data-admin="#admin/inventory">إدارة المركبات</div>
-        <div class="side-item" data-admin="#admin/users">المستخدمون</div>
-        <div class="side-item" data-admin="#admin/settings">الإعدادات</div>
-      </aside>
-
-      <main class="content" id="main">
-        <!-- SPA views -->
-        <section id="view-home">
-          <h3>مرحباً في auto 23 dz</h3>
-          <p class="muted">نسخة عرضية شاملة تعرض كيف يمكن أن يكون موقع معرض سيارات كبير مع لوحة إدارة كاملة.</p>
-
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-            <div class="card" style="flex:1;min-width:220px">
-              <h4>عرض مميز</h4>
-              <div class="car-img"><svg viewBox="0 0 800 360" width="260"><path d="M60 220 C120 160 220 140 310 140 C400 140 530 140 610 200 L640 220 L710 220 L730 200 L760 200 L760 260 L60 260 Z" fill="#2b3036"/></svg></div>
-              <div class="muted">موديلات 2023 — أسعار تنافسية</div>
-            </div>
-
-            <div class="card" style="width:320px">
-              <h4>بحث سريع</h4>
-              <div style="display:flex;gap:8px;margin-top:8px">
-                <input id="quick-q" placeholder="ابحث عن موديل أو ماركة" />
-                <button class="btn" onclick="quickSearch()">بحث</button>
-              </div>
-              <div class="muted" style="margin-top:8px">مثال: 'Mercedes C200' أو 'SUV'</div>
-            </div>
-
-            <div class="card" style="flex:1;min-width:220px">
-              <h4>لماذا تختارنا؟</h4>
-              <ul class="muted" style="margin:8px 0 0 0;padding-left:16px">
-                <li>اعتمادات وفحص كامل لكل مركبة</li>
-                <li>تمويل وخيارات دفع</li>
-                <li>ضمان ما بعد البيع</li>
-              </ul>
-            </div>
+      <div class="modal-grid">
+        <div style="display:grid;gap:12px">
+          <div style="height:260px;border-radius:10px;background:linear-gradient(135deg,#071018,#081120);display:grid;place-items:center;border:1px solid rgba(255,255,255,0.03)">
+            <svg viewBox="0 0 800 360" width="100%" style="max-height:240px;" aria-hidden>
+              <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#20262d"/><stop offset="1" stop-color="#5a6166"/></linearGradient></defs>
+              <path d="M60 220 C120 160 220 140 310 140 C400 140 530 140 610 200 L640 220 L710 220 L730 200 L760 200 L760 260 L60 260 Z" fill="url(#g2)"/>
+            </svg>
           </div>
-
-          <h4 style="margin-top:18px">طرازات مختارة</h4>
-          <div id="featuredGrid" class="grid" style="margin-top:8px"></div>
-        </section>
-
-        <section id="view-inventory" class="hidden">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <h3>المعرض — كل المركبات</h3>
-            <div>
-              <button class="btn" onclick="exportCSV()">تصدير CSV</button>
-              <button class="btn" onclick="importJSONPrompt()">استيراد JSON</button>
-            </div>
+          <div style="display:flex;gap:10px">
+            <button class="btn-primary" onclick="closeModal()">حسناً</button>
+            <button class="btn">مراسلة بخصوص السيارة</button>
           </div>
-
-          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-            <input id="filter-q" placeholder="ابحث بالماركة، الموديل، السنة..." style="flex:1" oninput="renderInventory()" />
-            <select id="filter-brand-inv" onchange="renderInventory()"><option value="">كل الماركات</option></select>
-            <select id="filter-type-inv" onchange="renderInventory()"><option value="">كل الأنواع</option><option>SUV</option><option>Sedan</option><option>Coupe</option></select>
-          </div>
-
-          <div id="inventoryGrid" class="grid" style="margin-top:12px"></div>
-
-          <h4 style="margin-top:16px">جدول كامل</h4>
-          <div style="overflow:auto;background:rgba(255,255,255,0.01);padding:8px;border-radius:8px;margin-top:8px">
-            <table id="inventoryTable"><thead><tr><th>الماركة</th><th>الموديل</th><th>سنة</th><th>السعر</th><th>الحالة</th><th>إجراءات</th></tr></thead><tbody></tbody></table>
-          </div>
-        </section>
-
-        <section id="view-analytics" class="hidden">
-          <h3>الإحصاءات</h3>
-          <div class="admin-top" style="margin-top:8px">
-            <div class="kpi">
-              <div class="tile"><div class="muted">عدد المركبات</div><div id="kpi-total" style="font-size:22px;font-weight:700">0</div></div>
-              <div class="tile"><div class="muted">متوسط السعر</div><div id="kpi-avg" style="font-size:22px;font-weight:700">0 DA</div></div>
-            </div>
-            <div style="flex:1"></div>
-          </div>
-
-          <div class="chart" id="priceChart"></div>
-        </section>
-
-        <section id="view-offers" class="hidden">
-          <h3>العروض الخاصة</h3>
-          <div class="grid" id="offersGrid"></div>
-        </section>
-
-        <section id="view-about" class="hidden">
-          <h3>عن المعرض</h3>
-          <p class="muted">auto 23 dz — معرض سيارات افتراضي لتجريب الواجهات والأنظمة الإدارية.</p>
-        </section>
-
-        <section id="view-contact" class="hidden">
-          <h3>تواصل معنا</h3>
-          <p class="muted">الهاتف: +2136XXXXXXXX — العنوان: الجزائر العاصمة</p>
-        </section>
-
-        <!-- Admin Views -->
-        <section id="admin-dashboard" class="hidden">
-          <h3>لوحة التحكم — نظرة عامة</h3>
-          <div class="admin-top" style="margin-top:12px">
-            <div class="kpi">
-              <div class="tile"><div class="muted">إجمالي المركبات</div><div id="admin-total" style="font-size:20px;font-weight:700">0</div></div>
-              <div class="tile"><div class="muted">الطلبات (وهمية)</div><div id="admin-orders" style="font-size:20px;font-weight:700">0</div></div>
-              <div class="tile"><div class="muted">المستخدمون</div><div id="admin-users" style="font-size:20px;font-weight:700">0</div></div>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-            <div style="flex:1;min-width:320px">
-              <h4>إضافة مركبة جديدة</h4>
-              <form id="addCarForm" onsubmit="event.preventDefault(); addCarFromForm()">
-                <label>الماركة<input id="c_brand" required></label>
-                <label>الموديل<input id="c_model" required></label>
-                <label>السنة<input id="c_year" type="number" required></label>
-                <label>السعر (DA)<input id="c_price" type="number" required></label>
-                <label>النوع<select id="c_type"><option>Sedan</option><option>SUV</option><option>Coupe</option></select></label>
-                <label>الكيلومترات<input id="c_mileage" placeholder="مثال: 5000 km"></label>
-                <label>الوقود<select id="c_fuel"><option>بنزين</option><option>ديزل</option><option>هجين</option></select></label>
-                <label>ملاحظات<textarea id="c_notes"></textarea></label>
-                <div style="display:flex;gap:8px"><button class="btn primary">أضف المركبة</button><button class="btn" type="button" onclick="generateMany(10)">توليد 10 مركبات</button></div>
-              </form>
-            </div>
-
-            <div style="flex:1;min-width:320px">
-              <h4>إدارة المستخدمين (مؤقت)</h4>
-              <div style="background:rgba(255,255,255,0.01);padding:8px;border-radius:8px">
-                <table id="usersTable"><thead><tr><th>الاسم</th><th>البريد</th><th>دور</th><th>إجراءات</th></tr></thead><tbody></tbody></table>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="admin-inventory" class="hidden">
-          <h3>إدارة المركبات</h3>
-          <div style="margin-top:12px">
-            <table id="adminTable"><thead><tr><th>ماركة</th><th>موديل</th><th>سنة</th><th>سعر</th><th>إجراءات</th></tr></thead><tbody></tbody></table>
-          </div>
-        </section>
-
-        <section id="admin-users" class="hidden">
-          <h3>المستخدمون</h3>
-          <div style="margin-top:12px">
-            <button class="btn" onclick="createDemoUsers()">توليد مستخدمين تجريبيين</button>
-            <div style="margin-top:8px" id="usersList"></div>
-          </div>
-        </section>
-
-        <section id="admin-settings" class="hidden">
-          <h3>الإعدادات</h3>
-          <form onsubmit="event.preventDefault(); saveSettings()">
-            <label>اسم الموقع<input id="s_name" value="auto 23 dz"></label>
-            <label>العملة<input id="s_currency" value="DA"></label>
-            <div style="margin-top:8px"><button class="btn primary">حفظ الإعدادات</button></div>
-          </form>
-        </section>
-
-      </main>
+        </div>
+        <div>
+          <h4 style="margin-top:0">المواصفات</h4>
+          <div id="modalSpecs" class="specs"></div>
+          <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:12px 0">
+          <div class="muted">ملاحظة: هذه نسخة عرضية — البيانات تجريبية.</div>
+        </div>
+      </div>
     </div>
+  </div>  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <footer>© <span id="year"></span> auto 23 dz — نسخة نموذجية كبيرة مع لوحة إدارة</footer>
-  </div>
+    // sample dataset of cars (8 items) — يمكنك تعديلها أو إضافة المزيد بسهولة
+    const cars = [
+      {id:1,brand:'Mercedes',model:'C200',year:2022,price:42000,type:'Sedan',mileage:'12,000 km',fuel:'بنزين',color:'أسود'},
+      {id:2,brand:'BMW',model:'X5',year:2021,price:55000,type:'SUV',mileage:'30,000 km',fuel:'ديزل',color:'رمادي'},
+      {id:3,brand:'Audi',model:'A6',year:2020,price:38000,type:'Sedan',mileage:'45,000 km',fuel:'بنزين',color:'أبيض'},
+      {id:4,brand:'Toyota',model:'Corolla',year:2019,price:18000,type:'Sedan',mileage:'80,000 km',fuel:'بنزين',color:'أزرق'},
+      {id:5,brand:'KIA',model:'Sportage',year:2023,price:32000,type:'SUV',mileage:'5,000 km',fuel:'بنزين',color:'أسود'},
+      {id:6,brand:'Mercedes',model:'GLE',year:2023,price:72000,type:'SUV',mileage:'2,000 km',fuel:'بنزين',color:'أبيض'},
+      {id:7,brand:'BMW',model:'M4',year:2022,price:99000,type:'Coupe',mileage:'6,000 km',fuel:'بنزين',color:'أحمر'},
+      {id:8,brand:'Toyota',model:'RAV4',year:2021,price:27000,type:'SUV',mileage:'40,000 km',fuel:'بنزين',color:'رمادي'}
+    ];
 
-  <!-- auth modal -->
-  <div id="authModal" class="hidden" style="position:fixed;inset:0;display:grid;place-items:center;background:rgba(2,6,23,0.6);z-index:60">
-    <div style="width:420px;background:linear-gradient(180deg,#071018,#041018);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)">
-      <h3 style="margin-top:0">تسجيل دخول المدير</h3>
-      <form onsubmit="event.preventDefault(); doLogin()">
-        <label>البريد<input id="adminEmail" required></label>
-        <label>كلمة المرور<input id="adminPass" type="password" required></label>
-        <div style="display:flex;gap:8px;margin-top:12px"><button class="btn primary">دخول</button><button class="btn" type="button" onclick="closeAuth()">إلغاء</button></div>
-      </form>
-    </div>
-  </div>
+    const grid = document.getElementById('carsGrid');
 
-  <script>
-    // ---------- app state and sample data ----------
-    const App = {
-      cars: [],
-      users: [],
-      settings: {name:'auto 23 dz', currency:'DA'}
-    };
-
-    // utility: random sample generator
-    function sampleCars(n=30){
-      const brands = ['Mercedes','BMW','Audi','Toyota','KIA','Hyundai','Renault','Peugeot'];
-      const types = ['Sedan','SUV','Coupe'];
-      const fuels = ['بنزين','ديزل','هجين'];
-      const res=[];
-      for(let i=0;i<n;i++){
-        const brand = brands[Math.floor(Math.random()*brands.length)];
-        const model = 'Model-'+(Math.floor(Math.random()*900)+100);
-        const year = 2015 + Math.floor(Math.random()*11);
-        const price = Math.floor(12000 + Math.random()*120000);
-        res.push({id:Date.now()+i, brand, model, year, price, type:types[Math.floor(Math.random()*types.length)], mileage: Math.floor(Math.random()*120000)+' km', fuel: fuels[Math.floor(Math.random()*fuels.length)], notes:'مركبة تجريبية'});
-      }
-      return res;
+    function renderCars(list){
+      grid.innerHTML = '';
+      list.forEach(car => {
+        const div = document.createElement('article');
+        div.className = 'card';
+        div.innerHTML = `
+          <div class="car-visual">
+            <!-- inline SVG for each car to avoid external images -->
+            <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <defs>
+                <linearGradient id="lg${car.id}" x1="0" x2="1"><stop offset="0" stop-color="#0e1116"/><stop offset="1" stop-color="#374046"/></linearGradient>
+              </defs>
+              <path d="M60 220 C120 160 220 140 310 140 C400 140 530 140 610 200 L640 220 L710 220 L730 200 L760 200 L760 260 L60 260 Z" fill="url(#lg${car.id})"/>
+              <circle cx="200" cy="260" r="26" fill="#0b0f13" />
+              <circle cx="560" cy="260" r="26" fill="#0b0f13" />
+            </svg>
+          </div>
+          <div class="car-meta">
+            <h3>${escapeHtml(car.brand)} ${escapeHtml(car.model)}</h3>
+            <div class="price">${formatPrice(car.price)} DA</div>
+          </div>
+          <div class="specs">
+            <span class="badge">سنة: ${car.year}</span>
+            <span class="badge">${car.type}</span>
+            <span class="badge">${car.mileage}</span>
+            <span class="badge">${car.fuel}</span>
+          </div>
+          <div class="actions">
+            <button class="btn" onclick="openModal(${car.id})">تفاصيل</button>
+            <button class="btn-primary" onclick="contactSeller(${car.id})">اطلب سعر</button>
+          </div>
+        `;
+        grid.appendChild(div);
+      });
     }
 
-    // initialize large dataset if none
-    if(!localStorage.getItem('auto23_cars')){
-      App.cars = sampleCars(80); // generate 80 items -> large site feel
-      localStorage.setItem('auto23_cars', JSON.stringify(App.cars));
-    } else {
-      App.cars = JSON.parse(localStorage.getItem('auto23_cars'));
+    // initial render
+    renderCars(cars);
+
+    // small utility functions
+    function formatPrice(v){
+      return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    function escapeHtml(s){
+      if(!s) return '';
+      return s.toString().replace(/[&<>"']/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c];
+      })
     }
 
-    // users
-    App.users = JSON.parse(localStorage.getItem('auto23_users')||'[]');
+    // filters
+    function applyFilters(){
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      const brand = document.getElementById('filter-brand').value;
+      const type = document.getElementById('filter-type').value;
+      const price = document.getElementById('filter-price').value;
 
-    // settings
-    App.settings = JSON.parse(localStorage.getItem('auto23_settings')||JSON.stringify(App.settings));
-
-    // helper renderers
-    const qs = s=>document.querySelector(s);
-    const qsa = s=>Array.from(document.querySelectorAll(s));
-
-    function renderFeatured(){
-      const root = qs('#featuredGrid'); root.innerHTML='';
-      const picks = App.cars.slice(0,8);
-      picks.forEach(c=>{ const card = document.createElement('div');card.className='card';card.innerHTML=`<div class="car-img"><svg viewBox="0 0 800 360" width="260"><path d="M60 220 C120 160 220 140 310 140 C400 140 530 140 610 200 L640 220 L710 220 L730 200 L760 200 L760 260 L60 260 Z" fill="#2b3036"/></svg></div><div class="meta"><strong>${c.brand} ${c.model}</strong><div class="muted">${c.year}</div></div><div class="specs"><span class="muted">${c.mileage}</span><span class="muted">${c.type}</span></div>`; root.appendChild(card); });
-    }
-
-    function populateBrandFilter(){
-      const brands = [...new Set(App.cars.map(c=>c.brand))].sort();
-      const sel = qs('#filter-brand-inv'); sel.innerHTML='<option value="">كل الماركات</option>';
-      brands.forEach(b=>{ const o = document.createElement('option'); o.value=b; o.textContent=b; sel.appendChild(o); })
-    }
-
-    function renderInventory(){
-      const q = qs('#filter-q')?.value.trim().toLowerCase()||'';
-      const brandFilter = qs('#filter-brand-inv')?.value||'';
-      const typeFilter = qs('#filter-type-inv')?.value||'';
-      const out = App.cars.filter(c=>{
-        let ok=true;
-        if(q){ ok = ok && (c.brand+' '+c.model+' '+c.year+' '+c.mileage+' '+c.price).toLowerCase().includes(q); }
-        if(brandFilter) ok = ok && c.brand===brandFilter;
-        if(typeFilter) ok = ok && c.type===typeFilter;
+      let filtered = cars.filter(c => {
+        let ok = true;
+        if(q){
+          const s = `${c.brand} ${c.model} ${c.year} ${c.mileage} ${c.price}`.toLowerCase();
+          ok = ok && s.indexOf(q) !== -1;
+        }
+        if(brand) ok = ok && c.brand === brand;
+        if(type) ok = ok && c.type === type;
+        if(price){
+          const parts = price.split('-');
+          const low = parseInt(parts[0],10);
+          const high = parts[1] ? parseInt(parts[1],10) : Infinity;
+          ok = ok && c.price >= low && c.price <= high;
+        }
         return ok;
       });
-      const grid = qs('#inventoryGrid'); grid.innerHTML='';
-      out.forEach(c=>{ const d=document.createElement('div'); d.className='card'; d.innerHTML=`<div class="car-img"><svg viewBox="0 0 800 360"><path d="M60 220 C120 160 220 140 310 140 C400 140 530 140 610 200 L640 220 L710 220 L730 200 L760 200 L760 260 L60 260 Z" fill="#1e2226"/></svg></div><div class="meta"><strong>${c.brand} ${c.model}</strong><div class="muted">${c.year}</div></div><div class="specs"><span class="muted">${c.mileage}</span><span class="muted">${c.type}</span><span class="muted">${c.fuel}</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn" onclick="viewCar(${c.id})">تفاصيل</button><button class="btn primary" onclick="editCar(${c.id})">تعديل</button><button class="btn" onclick="deleteCar(${c.id})">حذف</button></div>`; grid.appendChild(d); });
 
-      // table
-      const tbody = qs('#inventoryTable tbody'); tbody.innerHTML=''; out.forEach(c=>{ const tr=document.createElement('tr'); tr.innerHTML=`<td>${c.brand}</td><td>${c.model}</td><td>${c.year}</td><td>${formatPrice(c.price)} ${App.settings.currency}</td><td class="muted">${c.type}</td><td><button class="btn" onclick="editCar(${c.id})">تعديل</button> <button class="btn" onclick="deleteCar(${c.id})">حذف</button></td>`; tbody.appendChild(tr); });
-
-      // admin table
-      const atbody = qs('#adminTable tbody'); atbody.innerHTML=''; out.forEach(c=>{ const tr=document.createElement('tr'); tr.innerHTML=`<td>${c.brand}</td><td>${c.model}</td><td>${c.year}</td><td>${formatPrice(c.price)} ${App.settings.currency}</td><td><button class="btn" onclick="editCar(${c.id})">تعديل</button> <button class="btn" onclick="deleteCar(${c.id})">حذف</button></td>`; atbody.appendChild(tr); });
-
-      // KPIs
-      qs('#kpi-total').textContent = App.cars.length;
-      qs('#kpi-avg').textContent = formatPrice(Math.round(App.cars.reduce((s,c)=>s+c.price,0)/Math.max(1,App.cars.length))) + ' ' + App.settings.currency;
-      qs('#admin-total').textContent = App.cars.length;
-
+      renderCars(filtered);
     }
 
-    function formatPrice(v){ return v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-
-    function viewCar(id){ const c = App.cars.find(x=>x.id===id); if(!c) return alert('غير موجود'); alert(`${c.brand} ${c.model} — ${c.year}\nالسعر: ${formatPrice(c.price)} ${App.settings.currency}\n${c.mileage} — ${c.fuel}\n${c.notes||''}`); }
-
-    function editCar(id){ const c = App.cars.find(x=>x.id===id); if(!c) return; const newPrice = prompt('السعر (DA)', c.price); if(newPrice!==null){ c.price = parseInt(newPrice,10); persistCars(); renderInventory(); } }
-    function deleteCar(id){ if(!confirm('هل تريد حذف المركبة؟')) return; App.cars = App.cars.filter(c=>c.id!==id); persistCars(); renderInventory(); }
-
-    function addCarFromForm(){ const brand = qs('#c_brand').value.trim(); const model = qs('#c_model').value.trim(); const year = parseInt(qs('#c_year').value,10); const price = parseInt(qs('#c_price').value,10); const type = qs('#c_type').value; const mileage = qs('#c_mileage').value || '0 km'; const fuel = qs('#c_fuel').value; const notes = qs('#c_notes').value; const car = {id:Date.now(), brand, model, year, price, type, mileage, fuel, notes}; App.cars.unshift(car); persistCars(); renderInventory(); qs('#addCarForm').reset(); alert('تمت الإضافة'); }
-
-    function generateMany(n=10){ const gen = sampleCars(n); App.cars = gen.concat(App.cars); persistCars(); renderInventory(); }
-
-    function persistCars(){ localStorage.setItem('auto23_cars', JSON.stringify(App.cars)); }
-
-    // CSV export
-    function exportCSV(){ const header = ['brand','model','year','price','type','mileage','fuel','notes']; const rows = App.cars.map(c=>header.map(h=>`"${(c[h]||'').toString().replace(/"/g,'""')}"`).join(',')); const csv = [header.join(','), ...rows].join('\n'); const blob = new Blob([csv],{type:'text/csv'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download='auto23_inventory.csv'; a.click(); URL.revokeObjectURL(url); }
-
-    function importJSONPrompt(){ const txt = prompt('ألصق محتوى JSON هنا أو اكتب [] لإلغاء'); if(!txt) return; try{ const arr = JSON.parse(txt); if(Array.isArray(arr)){ App.cars = arr.concat(App.cars); persistCars(); renderInventory(); alert('تم الاستيراد'); } else alert('يجب أن يكون JSON لمصفوفة'); }catch(e){ alert('JSON غير صالح'); } }
-
-    // users demo
-    function createDemoUsers(){ App.users = [ {id:1,name:'Admin',email:'admin@auto23dz.com',role:'admin'},{id:2,name:'Ali',email:'ali@example.com',role:'sales'} ]; localStorage.setItem('auto23_users', JSON.stringify(App.users)); renderUsers(); }
-    function renderUsers(){ const tbody = qs('#usersTable tbody'); tbody.innerHTML=''; App.users.forEach(u=>{ const tr = document.createElement('tr'); tr.innerHTML=`<td>${u.name}</td><td>${u.email}</td><td>${u.role}</td><td><button class="btn" onclick="deleteUser(${u.id})">حذف</button></td>`; tbody.appendChild(tr); }); qs('#usersList').innerHTML = App.users.map(u=>`<div class="card" style="margin-bottom:8px">${u.name} — ${u.email} — <span class="muted">${u.role}</span></div>`).join(''); qs('#admin-users').textContent = App.users.length; }
-    function deleteUser(id){ App.users = App.users.filter(u=>u.id!==id); localStorage.setItem('auto23_users', JSON.stringify(App.users)); renderUsers(); }
-
-    function addSampleDataIfEmpty(){ if(!App.cars.length){ App.cars = sampleCars(80); persistCars(); } }
-
-    // admin auth (mock)
-    function doLogin(){ const e = qs('#adminEmail').value; const p = qs('#adminPass').value; if(e==='admin@auto23dz.com' && p==='password'){ closeAuth(); alert('تم الدخول كمدير'); goToAdmin('dashboard'); } else alert('بيانات الدخول غير صحيحة. جرب: admin@auto23dz.com / password'); }
-    function closeAuth(){ qs('#authModal').classList.add('hidden'); }
-    qs('#loginBtn').addEventListener('click', ()=>{ qs('#authModal').classList.remove('hidden'); });
-
-    // routing
-    function showView(id){ qsa('[id^=\"view-\"]').forEach(el=>el.classList.add('hidden')); qsa('[id^=\"admin-\"]').forEach(el=>el.classList.add('hidden'));
-      if(id.startsWith('admin')){ qs('#admin-'+id.split('/')[1]).classList.remove('hidden'); }
-      else qs('#view-'+id).classList.remove('hidden');
+    function toggleAll(){
+      document.getElementById('q').value = '';
+      document.getElementById('filter-brand').value = '';
+      document.getElementById('filter-type').value = '';
+      document.getElementById('filter-price').value = '';
+      renderCars(cars);
     }
 
-    function navigateToHash(){ const h = location.hash.replace('#','')||'home'; if(h.startsWith('admin/')){ // require auth (mock)
-        if(!confirm('دخول إلى لوحة الإدارة؟ (تأكيد كمحاكاة)')){ location.hash='home'; return; }
-        qsa('[id^=\"view-\"]').forEach(el=>el.classList.add('hidden'));
-        qsa('[id^=\"admin-\"]').forEach(el=>el.classList.add('hidden'));
-        const section = '#admin-'+h.split('/')[1]; if(qs(section)) qs(section).classList.remove('hidden');
-      } else {
-        qsa('[id^=\"view-\"]').forEach(el=>el.classList.add('hidden'));
-        const section = '#view-'+h; if(qs(section)) qs(section).classList.remove('hidden');
-      }
-      // update active nav
+    // modal functions
+    function openModal(id){
+      const car = cars.find(c => c.id === id);
+      if(!car) return;
+      document.getElementById('modalTitle').textContent = `${car.brand} ${car.model}`;
+      document.getElementById('modalSubtitle').textContent = `${car.type} • ${car.year} • ${formatPrice(car.price)} DA`;
+      const specs = document.getElementById('modalSpecs');
+      specs.innerHTML = `
+        <div class="badge">اللون: ${car.color}</div>
+        <div class="badge">الكيلومترات: ${car.mileage}</div>
+        <div class="badge">الوقود: ${car.fuel}</div>
+        <div class="badge">السعر: ${formatPrice(car.price)} DA</div>
+      `;
+      document.getElementById('modal').classList.add('open');
+    }
+    function closeModal(){
+      document.getElementById('modal').classList.remove('open');
     }
 
-    // small helpers for UI
-    qsa('.nav-link').forEach(b=>b.addEventListener('click', ()=>{ const r=b.getAttribute('data-route').replace('#',''); location.hash = r; }));
-    qsa('.side-item').forEach(s=>{ s.addEventListener('click', ()=>{ const ar = s.getAttribute('data-route')||s.getAttribute('data-admin'); if(ar){ location.hash = ar.replace('#',''); } }); });
-    window.addEventListener('hashchange', navigateToHash);
-
-    // analytics chart simple rendering
-    function renderPriceChart(){ const vals = App.cars.slice(0,50).map(c=>c.price); const canvas = document.createElement('canvas'); canvas.width = qs('#priceChart').clientWidth; canvas.height = qs('#priceChart').clientHeight; const ctx = canvas.getContext('2d'); // simple bar chart
-      ctx.clearRect(0,0,canvas.width,canvas.height); const max = Math.max(...vals); const w = canvas.width/vals.length; vals.forEach((v,i)=>{ const h = (v/max)*(canvas.height-20); ctx.fillStyle = 'rgba(199,161,122,0.9)'; ctx.fillRect(i*w+2, canvas.height-h-10, w-4, h); }); qs('#priceChart').innerHTML=''; qs('#priceChart').appendChild(canvas);
+    // contact button
+    function contactSeller(id){
+      const car = cars.find(c=>c.id===id);
+      const phone = '+2136XXXXXXX';
+      const text = encodeURIComponent(`مرحباً، أريد معلومات عن السيارة: ${car.brand} ${car.model} (${car.year}) — السعر ${formatPrice(car.price)} DA.`);
+      // open whatsapp (user can edit)
+      window.open(`https://wa.me/${phone.replace(/[^0-9]/g,'')}?text=${text}`, '_blank');
     }
 
-    // save settings
-    function saveSettings(){ App.settings.name = qs('#s_name').value; App.settings.currency = qs('#s_currency').value; localStorage.setItem('auto23_settings', JSON.stringify(App.settings)); alert('تم حفظ الإعدادات'); }
+    function scrollToContact(){
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    }
 
-    // create demo users
-    function createDemoUsers(){ App.users = [ {id:Date.now(), name:'Admin', email:'admin@auto23dz.com', role:'admin'}, {id:Date.now()+1,name:'Sahar',email:'sahar@example.com',role:'sales'} ]; localStorage.setItem('auto23_users', JSON.stringify(App.users)); renderUsers(); }
+    function highlightPremium(){
+      const premium = cars.filter(c => c.price >= 70000);
+      if(premium.length) renderCars(premium);
+      else alert('لا توجد طرازات ممتازة في العرض التجريبي.');
+    }
 
-    // small quick search
-    function quickSearch(){ const q = qs('#quick-q').value.trim().toLowerCase(); if(!q) return alert('اكتب مصطلح للبحث'); const found = App.cars.find(c=> (c.brand+' '+c.model).toLowerCase().includes(q)); if(found) alert(`تم العثور: ${found.brand} ${found.model} — ${formatPrice(found.price)} ${App.settings.currency}`); else alert('لا توجد نتيجة'); }
+    // accessibility: close modal on ESC
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') closeModal();
+    });
 
-    // view init
-    function init(){ renderFeatured(); populateBrandFilter(); renderInventory(); renderUsers(); renderPriceChart(); qs('#year').textContent = new Date().getFullYear(); }
-
-    // admin navigation helper
-    function goToAdmin(section){ location.hash = 'admin/'+section; }
-
-    // editing helpers for admin
-    function editCarInline(id){ const car = App.cars.find(c=>c.id===id); if(!car) return; const newBrand = prompt('الماركة', car.brand); if(newBrand!==null) car.brand=newBrand; persistCars(); renderInventory(); }
-
-    // generate demo users
-    function generateDemoIfEmpty(){ if(!App.users.length){ createDemoUsers(); } }
-
-    // import/export full site
-    function exportFullSite(){ const state = {cars:App.cars, users:App.users, settings:App.settings}; const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='auto23dz_full_export.json'; a.click(); }
-
-    // load
-    window.addEventListener('load', ()=>{ init(); generateDemoIfEmpty(); navigateToHash(); });
-
-    // small UI actions referenced in templates
-    function importJSONPrompt(){}
-
-  </script>
-</body>
+  </script></body>
 </html>
